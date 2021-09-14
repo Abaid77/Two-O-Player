@@ -22,6 +22,13 @@ class Game
     @players.rotate!
   end
 
+  def display_winner
+    winner = @player1.dead? ? @player2 : @player1
+    puts
+    puts "The winner is #{winner.name}"
+  end
+
+
   def display_score
     puts "-----------------------------"
     puts "        Scoreboard           "
@@ -37,19 +44,23 @@ class Game
 
       next_round
 
+      @player1.ask_question
+      display_score
+      @player2.ask_question
       display_score
 
-      @player1.lives -= 1
+      
 
     end
+
+    display_winner
 
     
   end
 
 end
 
-  game1 = Game.new
-  game1.play
+
 
 
 

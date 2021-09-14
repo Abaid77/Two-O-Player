@@ -15,6 +15,7 @@ class Player
   def ask_question
     num1 = rand(10)
     num2 = rand(10)
+    puts "Question for #{@name}"
     puts "What is #{num1} + #{num2} = ?"
     user_answer = gets.chomp.to_i
     answer = num1 + num2
@@ -29,10 +30,3 @@ class Player
   end
 
 end
-
-player1 = Player.new("Tester")
-puts player1.name
-puts player1.lives
-puts player1.dead?
-puts player1.ask_question
-puts player1.lives
